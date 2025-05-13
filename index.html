@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+        <style>
+            body, html
+            {
+                margin: 0%;
+            }
+
+            html
+            {
+                scroll-behavior: smooth;
+            }
+
+            .container
+            {
+                width: 44%;
+                margin-left: calc((100% - 44%)/2);
+                margin-right: calc((100% - 44%)/2);
+                padding-top: 80px;
+            }
+
+            @media screen and (max-width: 500px) and (max-height: 1000px)
+            {
+                .container
+                {
+                    width: 66%;
+                    margin-left: calc((100% - 66%)/2);
+                    margin-right: calc((100% - 66%)/2);
+                    padding-top: 80px;
+                }
+            }
+
+            
+            
+            div.titolo-menu
+            {
+                text-align: center;
+            }
+
+            span.titolo-menu
+            {
+                font-size: 40px;
+                font-family: system-ui;
+                text-transform: uppercase;
+                color: #335c90;
+            }
+
+            div.categoria
+            {
+                text-align: center;
+                margin-top: 35px;
+            }
+
+            span.categoria
+            {
+                font-size: 25px;
+                font-family: system-ui;
+                color: #335c90;
+            }
+
+            div.piatto
+            {
+                margin-top: 25px;
+                color: #777777;
+                font-size: 18px;
+                font-family: system-ui;
+            }
+
+            hr
+            {
+                border: solid #335c90 1px;
+                margin-top: 10px;
+                margin-bottom: 0%;
+            }
+
+            strong
+            {
+                color: #335c90;
+            }
+
+            div.fine
+            {
+                height: 100px;
+            }
+
+            #titolo 
+            {
+                height: 150px;
+                width: 100%;
+                background-color: #335c90;
+                text-align: center;
+                line-height: 200px;
+                color: white;
+                font-size: 24px;
+                display: flex; /* Usato per centrare l'immagine */
+                justify-content: center; /* Centra orizzontalmente */
+                align-items: center;
+            }
+
+            #titolo > img
+            {
+                width: 100%; /* L'immagine occupa tutta la larghezza disponibile */
+                height: 100%; /* L'immagine occupa tutta l'altezza disponibile */
+                object-fit: contain; /* Assicura che l'immagine sia contenuta nel div */
+            }
+
+            #bar 
+            {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 10px 0;
+                width: 100%;
+                background-color: #335c90;
+                color: white;
+                transition: top 5.0s;
+            }
+
+            div.navigazione
+            {
+                margin: 14px 25px;
+                font-family: system-ui;
+                font-size: 13px;
+                letter-spacing: 1px;
+                font-weight: bold;
+                position: relative;
+                display: inline-block;
+                cursor: pointer;
+                text-transform: uppercase;
+            }
+
+            @media screen and (max-width: 500px) and (max-height: 1000px)
+            {
+                div.navigazione {
+                    margin: 14px 10px;
+                    font-family: system-ui;
+                    font-size: 13px;
+                    letter-spacing: 1px;
+                    font-weight: bold;
+                    position: relative;
+                    display: inline-block;
+                    cursor: pointer;
+                    text-transform: uppercase;
+                }
+            }
+
+            /* Pseudo-elemento per la linea */
+            div.navigazione::after 
+            {
+                content: "";
+                position: absolute;
+                left: -10px;
+                bottom: -7px;
+                width: 0px;
+                height: 2px;
+                background-color: white;
+                transition: width 0.3s ease;
+            }
+
+            /* Quando il cursore passa sopra */
+            div.navigazione:hover::after {
+                width: calc(100% + 20px); /* La linea si estende verso destra */
+            }
+
+        </style>
+    </head>
+    <body>
+        <div id="titolo">
+            <img src="ancora.png" alt="Immagine invertita">
+        </div>
+        <div id="bar">
+            <div class="navigazione" id="epanini">I panini</div>
+            <div class="navigazione" id="epiatti">Piatti freddi</div>
+            <div class="navigazione" id="ecocktail">Aperitivo/Cocktail</div>
+        </div>
+        <div class="container">
+            <div class="titolo-menu">
+                <span class="titolo-menu">Il nostro menu</span>
+            </div>
+            <div class="categoria" id="panini">
+                <span class="categoria">I panini</span>
+            </div>
+            <hr>
+            <div class="piatto">
+                <strong translate="no">Tramontana</strong> <b>6,00</b>
+                <br>
+                <span>Pomodoro, mozzarella, olio, sale e origano</span>
+            </div>
+            <div class="piatto">
+                <strong translate="no">Levante</strong> <b>6,00</b>
+                <br>
+                <span>Tonno, pomodoro e maionese</span>
+            </div>
+            <div class="piatto">
+                <strong translate="no">Scirocco</strong> <b>6,00</b>
+                <br>
+                <span>Salame e formaggio</span>
+            </div>
+            <div class="piatto">
+                <strong translate="no">Ponente</strong> <b>6,00</b>
+                <br>
+                <span>prosciutto e formaggio</span>
+            </div>
+            <div class="piatto">
+                <strong translate="no">Maestrale</strong> <b>6,00</b>
+                <br>
+                <span>Speck e brie</span>
+            </div>
+            <div class="piatto">
+                <strong translate="no">Ostro</strong> <b>7,00</b>
+                <br>
+                <span>Prosciutto crudo, pomodoro e mozzarella</span>
+            </div>
+            <div class="piatto">
+                <strong translate="no">Libeccio</strong> <b>7,00</b>
+                <br>
+                <span>Tacchino con salsa tonnata e pomodoro</span>
+            </div>
+            <div class="piatto">
+                <strong translate="no">Grecale</strong> <b>8,00</b>
+                <br>
+                <span>Bresaola, pomodoro, mozzarella e olio</span>
+            </div>
+            <div class="piatto">
+                <strong>Toast</strong> <b>5,00</b>
+                <br>
+                <span>prosciutto e formaggio</span>
+            </div>
+            <div class="categoria" id="piatti">
+                <span class="categoria">Piatti freddi</span>
+            </div>
+            <hr>
+            <div class="piatto">
+                <strong>Insalata mista</strong> <b>10,00</b>
+                <br>
+                <span>Insalata foglia verde, pomodoro, mozzarella, tonno, mais e olive</span>
+            </div>
+            <div class="piatto">
+                <strong translate="no">Caprese</strong> <b>8,00/11,00</b>
+                <br>
+                <span>Pomodoro, mozzarella, olive denocciolate, olio, sale e origano. Su richiesta aggiunta di prosciutto crudo</span>
+            </div>
+            <div class="piatto">
+                <strong translate="no">Caprese</strong> <strong>sbagliata</strong> <b>9,00/11,00</b>
+                <br>
+                <span>Zucchine, melanzane, peperoni, mozzarella, sale e origano. Su richiesta aggiunta di prosciutto crudo</span>
+            </div>
+            <div class="piatto">
+                <strong>Bresaola</strong> <b>11,00</b>
+                <br>
+                <span>Bresaola, rucola e grana</span>
+            </div>
+            <div class="piatto">
+                <strong translate="no">Carpaccio</strong> <b>12,00</b>
+                <br>
+                <span>Manzo, insalata, pomodoro, olive e limone</span>
+            </div>
+            <div class="categoria" id="cocktail">
+                <span class="categoria">Aperitivo/Cocktail</span>
+            </div>
+            <hr>
+            <div class="piatto">
+                <strong>Aperol Spritz</strong> <b>7,00</b>
+                <br>
+                <span>Aperol e prosecco</span>
+            </div>
+            <div class="piatto">
+                <strong>Campari Spritz</strong> <b>7,00</b>
+                <br>
+                <span>Campari e prosecco</span>
+            </div>
+            <div class="piatto">
+                <strong>Negroni</strong> <b>7,00</b>
+                <br>
+                <span>Campari, vermut rosso e gin</span>
+            </div>
+            <div class="piatto">
+                <strong>Negroni Sbagliato</strong> <b>7,00</b>
+                <br>
+                <span>Campari, vermut rosso e prosecco</span>
+            </div>
+            <div class="piatto">
+                <strong>Negroski</strong> <b>7,00</b>
+                <br>
+                <span>Campari, vermut rosso e vodka</span>
+            </div>
+            <div class="piatto">
+                <strong>Americano</strong> <b>7,00</b>
+                <br>
+                <span>Campari e vermut rosso</span>
+            </div>
+            <div class="piatto">
+                <strong>Piña Colada</strong> <b>7,00</b>
+                <br>
+                <span>Rum, malibu e succo d'ananas</span>
+            </div>
+            <div class="piatto">
+                <strong>Mojito</strong> <b>7,00</b>
+                <br>
+                <span>Rum, menta, lime e Zucchero di canna</span>
+            </div>
+            <div class="piatto">
+                <strong>Rum Cooler</strong> <b>7,00</b>
+                <br>
+                <span>Rum scuro, Ginger Ale, Zucchero di canna, lime e arancia</span>
+            </div>
+            <div class="piatto">
+                <strong>Caipirinha</strong> <b>7,00</b>
+                <br>
+                <span>Cachaça, lime e zucchero di canna</span>
+            </div>
+            <div class="piatto">
+                <strong>Caipiroska</strong> <b>7,00</b>
+                <br>
+                <span>vodka, lime, zucchero di canna e sciroppo di fragola, ananas o pesca</span>
+            </div>
+            <div class="fine"></div>
+        </div>
+
+        <script>
+            window.addEventListener("scroll", function() 
+            {
+                const sium = document.getElementById("titolo");
+                const myDiv = document.getElementById("bar");
+
+                // Ottieni la posizione inferiore del div con ID "sium"
+                const siumBottom = sium.getBoundingClientRect().bottom;
+
+                // Se la parte inferiore del div "sium" è sopra la finestra, rendi il div "myDiv" fisso
+                if (siumBottom <= 0) 
+                {
+                    myDiv.style.position = "fixed";
+                    myDiv.style.top = "0";
+                } 
+                else 
+                {
+                    myDiv.style.position = "relative";
+                    myDiv.style.top = "initial";
+                }
+            });
+        </script>
+        <script>
+            document.getElementById("epanini").addEventListener("click", function() {
+                const targetDiv = document.getElementById("panini");
+                const anguriaDiv = document.getElementById("titolo");
+                let offset = 135; // Offset predefinito
+
+                // Controlla se si è superato il div "anguria"
+                const anguriaPosition = anguriaDiv.getBoundingClientRect().top;
+                if (anguriaPosition < 0) { // Se anguria è sopra la finestra visibile
+                    offset = 70;
+                }
+
+                const targetPosition = targetDiv.getBoundingClientRect().top + window.pageYOffset - offset;
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: "smooth"
+                });
+            });
+        </script>
+        <script>
+            document.getElementById("epiatti").addEventListener("click", function() {
+                const targetDiv = document.getElementById("piatti");
+                const anguriaDiv = document.getElementById("titolo");
+                let offset = 135; // Offset predefinito
+
+                // Controlla se si è superato il div "anguria"
+                const anguriaPosition = anguriaDiv.getBoundingClientRect().top;
+                if (anguriaPosition < 0) { // Se anguria è sopra la finestra visibile
+                    offset = 70;
+                }
+
+                const targetPosition = targetDiv.getBoundingClientRect().top + window.pageYOffset - offset;
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: "smooth"
+                });
+            });
+        </script>
+        <script>
+            document.getElementById("ecocktail").addEventListener("click", function() {
+                const targetDiv = document.getElementById("cocktail");
+                const anguriaDiv = document.getElementById("titolo");
+                let offset = 135; // Offset predefinito
+
+                // Controlla se si è superato il div "anguria"
+                const anguriaPosition = anguriaDiv.getBoundingClientRect().top;
+                if (anguriaPosition < 0) { // Se anguria è sopra la finestra visibile
+                    offset = 70;
+                }
+
+                const targetPosition = targetDiv.getBoundingClientRect().top + window.pageYOffset - offset;
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: "smooth"
+                });
+            });
+        </script>
+    </body>
+</html>
