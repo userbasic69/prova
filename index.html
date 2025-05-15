@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="it">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,6 +14,13 @@
             html
             {
                 scroll-behavior: smooth;
+            }
+
+            body
+            {
+                background-image: url(images1.jpg);
+                background-color: rgb(255 255 255 / 90%);
+                background-blend-mode: overlay;
             }
 
             .container
@@ -34,8 +41,6 @@
                     padding-top: 80px;
                 }
             }
-
-            
             
             div.titolo-menu
             {
@@ -44,7 +49,7 @@
 
             span.titolo-menu
             {
-                font-size: 40px;
+                font-size: 45px;
                 font-family: system-ui;
                 text-transform: uppercase;
                 color: #335c90;
@@ -53,7 +58,7 @@
             div.categoria
             {
                 text-align: center;
-                margin-top: 35px;
+                margin-top: 50px;
             }
 
             span.categoria
@@ -85,12 +90,36 @@
 
             div.fine
             {
-                height: 100px;
+                height: auto;
+                width: 100%;
+                margin-top: 100px;
+                background-color: #335c90;
+                display: flex; /* Usato per centrare l'immagine */
+                justify-content: center; /* Centra orizzontalmente */
+                align-items: center;
+            }
+
+            div.allergeni
+            {
+                height: auto;
+                width: 90%;
+                padding-top: 70px;
+                color: white;
+                font-size: 18px;
+                font-family: system-ui;
+                background-color: #335c90;
+                padding-bottom: 70px;
+                letter-spacing: 0.2px;
+            }
+
+            div.allergeni > strong
+            {
+                color: white;
             }
 
             #titolo 
             {
-                height: 150px;
+                height: 170px;
                 width: 100%;
                 background-color: #335c90;
                 text-align: center;
@@ -100,6 +129,7 @@
                 display: flex; /* Usato per centrare l'immagine */
                 justify-content: center; /* Centra orizzontalmente */
                 align-items: center;
+                padding-top: 10px;
             }
 
             #titolo > img
@@ -137,7 +167,7 @@
             @media screen and (max-width: 500px) and (max-height: 1000px)
             {
                 div.navigazione {
-                    margin: 14px 10px;
+                    margin: 14px 8px;
                     font-family: system-ui;
                     font-size: 13px;
                     letter-spacing: 1px;
@@ -162,23 +192,46 @@
                 transition: width 0.3s ease;
             }
 
+            @media screen and (max-width: 500px) and (max-height: 1000px)
+            {
+                div.navigazione::after 
+                {
+                    content: "";
+                    position: absolute;
+                    left: -3px;
+                    bottom: -7px;
+                    width: 0px;
+                    height: 2px;
+                    background-color: white;
+                    transition: width 0.3s ease;
+                }
+            }
+
             /* Quando il cursore passa sopra */
             div.navigazione:hover::after {
                 width: calc(100% + 20px); /* La linea si estende verso destra */
+            }
+
+            @media screen and (max-width: 500px) and (max-height: 1000px)
+            {
+                div.navigazione:hover::after 
+                {
+                    width: calc(100% + 6px); /* La linea si estende verso destra */
+                }
             }
 
         </style>
     </head>
     <body>
         <div id="titolo">
-            <img src="ancora.png" alt="Immagine invertita">
+            <img src="logo_finale-removebg-preview1.png" alt="Immagine invertita">
         </div>
         <div id="bar">
             <div class="navigazione" id="epanini">I panini</div>
             <div class="navigazione" id="epiatti">Piatti freddi</div>
             <div class="navigazione" id="ecocktail">Aperitivo/Cocktail</div>
         </div>
-        <div class="container">
+        <div class="container" id="spazio">
             <div class="titolo-menu">
                 <span class="titolo-menu">Il nostro menu</span>
             </div>
@@ -189,47 +242,47 @@
             <div class="piatto">
                 <strong translate="no">Tramontana</strong> <b>6,00</b>
                 <br>
-                <span>Pomodoro, mozzarella, olio, sale e origano</span>
+                <span>Pomodoro</span> <span>mozzarella</span> <span>olio</span> <span>sale</span> <span>origano</span>
             </div>
             <div class="piatto">
                 <strong translate="no">Levante</strong> <b>6,00</b>
                 <br>
-                <span>Tonno, pomodoro e maionese</span>
+                <span>Tonno</span> <span>pomodoro</span> <span>maionese</span>
             </div>
             <div class="piatto">
                 <strong translate="no">Scirocco</strong> <b>6,00</b>
                 <br>
-                <span>Salame e formaggio</span>
+                <span>Salame</span> <span>formaggio</span>
             </div>
             <div class="piatto">
                 <strong translate="no">Ponente</strong> <b>6,00</b>
                 <br>
-                <span>prosciutto e formaggio</span>
+                <span>prosciutto</span> <span>formaggio</span>
             </div>
             <div class="piatto">
                 <strong translate="no">Maestrale</strong> <b>6,00</b>
                 <br>
-                <span>Speck e brie</span>
+                <span>Speck</span> <span>brie</span>
             </div>
             <div class="piatto">
                 <strong translate="no">Ostro</strong> <b>7,00</b>
                 <br>
-                <span>Prosciutto crudo, pomodoro e mozzarella</span>
+                <span>Prosciutto crudo</span> <span>pomodoro</span> <span>mozzarella</span>
             </div>
             <div class="piatto">
                 <strong translate="no">Libeccio</strong> <b>7,00</b>
                 <br>
-                <span>Tacchino con salsa tonnata e pomodoro</span>
+                <span>Tacchino con salsa tonnata</span> <span>pomodoro</span>
             </div>
             <div class="piatto">
                 <strong translate="no">Grecale</strong> <b>8,00</b>
                 <br>
-                <span>Bresaola, pomodoro, mozzarella e olio</span>
+                <span>Bresaola</span> <span>pomodoro</span> <span>mozzarella</span> <span>olio</span>
             </div>
             <div class="piatto">
                 <strong>Toast</strong> <b>5,00</b>
                 <br>
-                <span>prosciutto e formaggio</span>
+                <span>prosciutto</span> <span>formaggio</span>
             </div>
             <div class="categoria" id="piatti">
                 <span class="categoria">Piatti freddi</span>
@@ -238,27 +291,27 @@
             <div class="piatto">
                 <strong>Insalata mista</strong> <b>10,00</b>
                 <br>
-                <span>Insalata foglia verde, pomodoro, mozzarella, tonno, mais e olive</span>
+                <span>Insalata foglia verde</span> <span>pomodoro</span> <span>mozzarella</span> <span>tonno</span> <span>mais</span> <span>olive</span>
             </div>
             <div class="piatto">
                 <strong translate="no">Caprese</strong> <b>8,00/11,00</b>
                 <br>
-                <span>Pomodoro, mozzarella, olive denocciolate, olio, sale e origano. Su richiesta aggiunta di prosciutto crudo</span>
+                <span>Pomodoro</span> <span>mozzarella</span> <span>olive denocciolate</span> <span>olio</span> <span>sale</span> <span>origano. Su richiesta aggiunta di prosciutto crudo</span>
             </div>
             <div class="piatto">
                 <strong translate="no">Caprese</strong> <strong>sbagliata</strong> <b>9,00/11,00</b>
                 <br>
-                <span>Zucchine, melanzane, peperoni, mozzarella, sale e origano. Su richiesta aggiunta di prosciutto crudo</span>
+                <span>Zucchine</span> <span>melanzane</span> <span>peperoni</span> <span>mozzarella</span> <span>sale</span> <span>origano. Su richiesta aggiunta di prosciutto crudo</span>
             </div>
             <div class="piatto">
                 <strong>Bresaola</strong> <b>11,00</b>
                 <br>
-                <span>Bresaola, rucola e grana</span>
+                <span>Bresaola</span> <span>rucola</span> <span>grana</span>
             </div>
             <div class="piatto">
                 <strong translate="no">Carpaccio</strong> <b>12,00</b>
                 <br>
-                <span>Manzo, insalata, pomodoro, olive e limone</span>
+                <span>Manzo</span> <span>insalata</span> <span>pomodoro</span> <span>olive</span> <span>limone</span>
             </div>
             <div class="categoria" id="cocktail">
                 <span class="categoria">Aperitivo/Cocktail</span>
@@ -267,61 +320,81 @@
             <div class="piatto">
                 <strong>Aperol Spritz</strong> <b>7,00</b>
                 <br>
-                <span>Aperol e prosecco</span>
+                <span>Aperol</span> <span>prosecco</span>
             </div>
             <div class="piatto">
                 <strong>Campari Spritz</strong> <b>7,00</b>
                 <br>
-                <span>Campari e prosecco</span>
+                <span>Campari</span> <span>prosecco</span>
             </div>
             <div class="piatto">
                 <strong>Negroni</strong> <b>7,00</b>
                 <br>
-                <span>Campari, vermut rosso e gin</span>
+                <span>Campari</span> <span>vermut rosso</span> <span>gin</span>
             </div>
             <div class="piatto">
                 <strong>Negroni Sbagliato</strong> <b>7,00</b>
                 <br>
-                <span>Campari, vermut rosso e prosecco</span>
+                <span>Campari</span> <span>vermut rosso</span> <span>prosecco</span>
             </div>
             <div class="piatto">
                 <strong>Negroski</strong> <b>7,00</b>
                 <br>
-                <span>Campari, vermut rosso e vodka</span>
+                <span>Campari</span> <span>vermut rosso</span> <span>vodka</span>
             </div>
             <div class="piatto">
                 <strong>Americano</strong> <b>7,00</b>
                 <br>
-                <span>Campari e vermut rosso</span>
+                <span>Campari</span> <span>vermut rosso</span>
             </div>
             <div class="piatto">
                 <strong>Piña Colada</strong> <b>7,00</b>
                 <br>
-                <span>Rum, malibu e succo d'ananas</span>
+                <span>Rum</span> <span translate="no">malibu</span> <span>succo d'ananas</span>
             </div>
             <div class="piatto">
                 <strong>Mojito</strong> <b>7,00</b>
                 <br>
-                <span>Rum, menta, lime e Zucchero di canna</span>
+                <span>Rum</span> <span>menta</span> <span>lime</span> <span>zucchero di canna</span>
             </div>
             <div class="piatto">
                 <strong>Rum Cooler</strong> <b>7,00</b>
                 <br>
-                <span>Rum scuro, Ginger Ale, Zucchero di canna, lime e arancia</span>
+                <span>Rum scuro</span> <span>ginger ale</span> <span>zucchero di canna</span> <span>lime</span> <span>arancia</span>
             </div>
             <div class="piatto">
                 <strong>Caipirinha</strong> <b>7,00</b>
                 <br>
-                <span>Cachaça, lime e zucchero di canna</span>
+                <span>Cachaça</span> <span>lime</span> <span>zucchero di canna</span>
             </div>
             <div class="piatto">
                 <strong>Caipiroska</strong> <b>7,00</b>
                 <br>
-                <span>vodka, lime, zucchero di canna e sciroppo di fragola, ananas o pesca</span>
+                <span>Vodka</span> <span>lime</span> <span>zucchero di canna</span> <span>sciroppo di</span> <span>(fragola</span> <span>ananas</span> <span>pesca)</span>
             </div>
-            <div class="fine"></div>
         </div>
-
+        <div class="fine">
+            <div class="allergeni">
+                Allergeni alimentari e quelli presenti nei formulati dei nostri alimenti<br>
+                <strong>1. Cereali contenenti glutine</strong> (cioè grano, segale, orzo, avena, farro, kamut o i loro ceppi ibridati) e prodotti derivati<br>
+                <strong>2. Crostacei e prodotti derivati</strong><br>
+                <strong>3. Uova e prodotti derivati</strong><br>
+                <strong>4. Pesce e prodotti derivati</strong><br>
+                <strong>5. Arachidi e prodotti derivati</strong><br>
+                <strong>6. Soia e prodotti derivati</strong><br>
+                <strong>7. Latte e prodotti derivati incluso lattosio</strong><br>
+                <strong>8. Frutta a guscio</strong>, cioe' mandorle (Amygdalus communis L.), nocciole (Corylus avellana), noci comuni (Juglans regia), noci di anacardi (Anacardium occidentale), noci di pecan (Carya illinoiesis (Wangenh) K. Koch), noci del Brasile (Bertholletia excelsa), pistacchi (Pistacia vera), noci del Queensland (Macadamia ternifolia) e prodotti derivati<br>
+                <strong>9. Sedano e prodotti derivati</strong><br>
+                <strong>10. Senape e prodotti derivati</strong><br>
+                <strong>11. Semi di sesamo e prodotti derivati</strong><br>
+                <strong>12. Anidride solforosa e solfiti in concentrazioni superiori a 10 mg/Kg o 10 mg/l espressi come S02.</strong><br>
+                <strong>13. Lupini e prodotti derivati</strong><br>
+                <strong>14. Molluschi e prodotti derivati</strong><br>
+                L'ATTIVITA' VIENE SVOLTA ALL'INTERNO DELLO STESSO FABBRICATO PERTANTO E' IMPOSSIBILE EVITARE LA POTENZIALE CONTAMINAZIONE CROCIATA ANCHE SU ALIMENTI CHE NON NE CONTENGONO IN FORMULAZIONE E/O RICETTA<br>
+                SI POSSONO UTILIZZARE ALIMENTI FRESCHI E/O CONGELATI A SECONDA DELLA STAGIONALITA' E DELLA DISPONIBILITA'<br>
+                PER QUALSIASI DUBBIO SI PREGA DI CHIEDERE AL PERSONALE<br>
+            </div>
+        </div>
         <script>
             window.addEventListener("scroll", function() 
             {
@@ -336,11 +409,13 @@
                 {
                     myDiv.style.position = "fixed";
                     myDiv.style.top = "0";
+                    document.getElementById("spazio").style.paddingTop = "145px";
                 } 
                 else 
                 {
                     myDiv.style.position = "relative";
                     myDiv.style.top = "initial";
+                    document.getElementById("spazio").style.paddingTop = "80px";
                 }
             });
         </script>
@@ -348,13 +423,13 @@
             document.getElementById("epanini").addEventListener("click", function() {
                 const targetDiv = document.getElementById("panini");
                 const anguriaDiv = document.getElementById("titolo");
-                let offset = 135; // Offset predefinito
+                let offset = 70; // Offset predefinito
 
                 // Controlla se si è superato il div "anguria"
-                const anguriaPosition = anguriaDiv.getBoundingClientRect().top;
-                if (anguriaPosition < 0) { // Se anguria è sopra la finestra visibile
-                    offset = 70;
-                }
+                //const anguriaPosition = anguriaDiv.getBoundingClientRect().top;
+                //if (anguriaPosition < 0) { // Se anguria è sopra la finestra visibile
+                //    offset = 70;
+                //}
 
                 const targetPosition = targetDiv.getBoundingClientRect().top + window.pageYOffset - offset;
                 window.scrollTo({
@@ -367,13 +442,13 @@
             document.getElementById("epiatti").addEventListener("click", function() {
                 const targetDiv = document.getElementById("piatti");
                 const anguriaDiv = document.getElementById("titolo");
-                let offset = 135; // Offset predefinito
+                let offset = 70; // Offset predefinito
 
                 // Controlla se si è superato il div "anguria"
-                const anguriaPosition = anguriaDiv.getBoundingClientRect().top;
-                if (anguriaPosition < 0) { // Se anguria è sopra la finestra visibile
-                    offset = 70;
-                }
+                //const anguriaPosition = anguriaDiv.getBoundingClientRect().top;
+                //if (anguriaPosition < 0) { // Se anguria è sopra la finestra visibile
+                //    offset = 70;
+                //}
 
                 const targetPosition = targetDiv.getBoundingClientRect().top + window.pageYOffset - offset;
                 window.scrollTo({
@@ -386,13 +461,13 @@
             document.getElementById("ecocktail").addEventListener("click", function() {
                 const targetDiv = document.getElementById("cocktail");
                 const anguriaDiv = document.getElementById("titolo");
-                let offset = 135; // Offset predefinito
+                let offset = 70; // Offset predefinito
 
                 // Controlla se si è superato il div "anguria"
-                const anguriaPosition = anguriaDiv.getBoundingClientRect().top;
-                if (anguriaPosition < 0) { // Se anguria è sopra la finestra visibile
-                    offset = 70;
-                }
+                //const anguriaPosition = anguriaDiv.getBoundingClientRect().top;
+                //if (anguriaPosition < 0) { // Se anguria è sopra la finestra visibile
+                //    offset = 70;
+                //}
 
                 const targetPosition = targetDiv.getBoundingClientRect().top + window.pageYOffset - offset;
                 window.scrollTo({
